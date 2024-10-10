@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using FlashCardBuddy_API.Classes;
 using Microsoft.EntityFrameworkCore;
+using FlashCardBuddy_API.Classes;
 
 namespace FlashCardBuddy_API.Models;
 
@@ -27,7 +27,7 @@ public partial class FlashCardBuddyDbContext : DbContext
     {
         modelBuilder.Entity<Flashcard>(entity =>
         {
-            entity.HasKey(e => e.Flashcardid).HasName("PK__FLASHCAR__3BFFD39FDE2DD7F8");
+            entity.HasKey(e => e.Flashcardid).HasName("PK__FLASHCAR__3BFFD39FA48566E2");
 
             entity.ToTable("FLASHCARDS");
 
@@ -45,12 +45,12 @@ public partial class FlashCardBuddyDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Flashcards)
                 .HasForeignKey(d => d.Userid)
-                .HasConstraintName("FK__FLASHCARD__USERI__3A81B327");
+                .HasConstraintName("FK__FLASHCARD__USERI__412EB0B6");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Userid).HasName("PK__User__7B9E7F3508D23DB2");
+            entity.HasKey(e => e.Userid).HasName("PK__User__7B9E7F35CF81956C");
 
             entity.ToTable("User");
 
@@ -58,6 +58,9 @@ public partial class FlashCardBuddyDbContext : DbContext
             entity.Property(e => e.Active)
                 .IsRequired()
                 .HasDefaultValueSql("('1')");
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .HasColumnName("EMAIL");
             entity.Property(e => e.Firstname)
                 .HasMaxLength(25)
                 .HasColumnName("FIRSTNAME");
@@ -67,6 +70,9 @@ public partial class FlashCardBuddyDbContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(50)
                 .HasColumnName("PASSWORD");
+            entity.Property(e => e.Username)
+                .HasMaxLength(30)
+                .HasColumnName("USERNAME");
         });
 
         OnModelCreatingPartial(modelBuilder);
