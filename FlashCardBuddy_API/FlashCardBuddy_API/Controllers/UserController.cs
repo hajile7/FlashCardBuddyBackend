@@ -99,6 +99,25 @@ namespace FlashCardBuddy_API.Controllers
             return Ok(newUser);
 
         } 
+
+        [HttpDelete("{userId}")]
+        public async Task<IActionResult> DeleteUser(int userId)
+        {
+            User result = await dbContext.Users.FindAsync(userId);
+
+            if(result == null || result.Active == false)
+            {
+                return NotFound("User not found");
+            }
+
+            result.Active = false;
+
+            dbContext.Users.Update(result);
+            await dbContext.SaveChangesAsync();
+
+            return NoContent();
+
+        }
     }
 
 }
