@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace FlashCardBuddy_API.Controllers
 {
@@ -24,7 +25,17 @@ namespace FlashCardBuddy_API.Controllers
             };
         }
 
-        [HttpGet("allFlashCards")]
+
+        [HttpGet]
+
+        public async Task<IActionResult> GetFlashCardId(int flashcardid)
+        {
+            Flashcard result = await dbContext.Flashcards.FirstOrDefaultAsync(f => f.Flashcardid == flashcardid)
+                ?? throw new InvalidOperationException("The response from the database was null.");
+
+            return Ok(result);
+        }
+        [HttpGet("All")]
 
         public async Task<IActionResult> GetAll(int userId)
         {
@@ -74,6 +85,41 @@ namespace FlashCardBuddy_API.Controllers
             return Ok(newFlashCard);
         }
 
+        [HttpPut]
 
+        public async Task<IActionResult> UpdateFlashCard(Flashcard flashcard)
+        {
+            Flashcard result = await dbContext.Flashcards.FirstOrDefaultAsync(f => f.Flashcardid == flashcard.Flashcardid)
+            ?? throw new InvalidOperationException("The response from the database was null");
+
+            if (flashcard.Question != null)
+            {
+                result.Question = flashcard.Question;
+            }
+            if (flashcard.Answer != null)
+            {
+                result.Answer = flashcard.Answer;
+            }
+            if (flashcard.Stack != null)
+            {
+                result.Stack = flashcard.Stack;
+            }
+
+            dbContext.Flashcards.Update(result);
+            await dbContext.SaveChangesAsync();
+            return Ok(result);
+        }
+
+        [HttpDelete("{flashcardID}")]
+
+        public async Task<IActionResult> DeleteFlashCard(int flashcardID)
+        {
+            Flashcard result = await dbContext.Flashcards.FirstOrDefaultAsync(f => f.Flashcardid == flashcardID) 
+            ?? throw new InvalidOperationException("The response from the database was null.");
+
+            dbContext.Flashcards.Remove(result);
+            await dbContext.SaveChangesAsync(); 
+            return NoContent();
+        }
     }
 }
