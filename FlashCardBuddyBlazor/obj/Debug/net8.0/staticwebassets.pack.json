@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\obj\\Debug\\net8.0\\compressed\\27b6u4w195.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FlashCardBuddyBlazor.styles.css",
+      "PackagePath": "staticwebassets\\FlashCardBuddyBlazor.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Eli\\source\\repos\\Group Projects\\FlashCardBuddy(Logan)\\FlashCardBuddyBlazor\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FlashCardBuddyBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FlashCardBuddyBlazor.props",
+      "PackagePath": "build\\FlashCardBuddyBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FlashCardBuddyBlazor.props",
+      "PackagePath": "buildMultiTargeting\\FlashCardBuddyBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FlashCardBuddyBlazor.props",
+      "PackagePath": "buildTransitive\\FlashCardBuddyBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

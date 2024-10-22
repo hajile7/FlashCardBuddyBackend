@@ -1,0 +1,36 @@
+@using FlashCardBuddyBlazor.Models;
+@using FlashCardBuddyBlazor.Services;
+
+@page "/register"
+
+@inject UserService userService;
+
+<PageTitle>Register</PageTitle>
+
+<h1>Register</h1>
+
+@if(currUsers.Count == 0) 
+{
+    <p>loading...</p>
+}
+else
+{
+    <ul>
+        @foreach(UserDTO user in currUsers) 
+        {
+            <li>@user.Username</li>
+            <li>@user.Firstname</li>
+        }
+    </ul>
+}
+
+@code 
+{
+    List<UserDTO> currUsers = new List<UserDTO>();
+
+    protected override async Task OnInitializedAsync() 
+    {
+        currUsers = await userService.GetUsersAsync();
+    }
+
+}

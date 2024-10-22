@@ -1,0 +1,35 @@
+@using FlashCardBuddyBlazor.Models;
+@using FlashCardBuddyBlazor.Services;
+
+@page "/Flashcards"
+
+@inject FlashcardService flashcardService;
+
+<PageTitle>Flashcards</PageTitle>
+
+<h1>Flashcards:</h1>
+
+@if(flashcards.Count == 0)
+{
+    <p>loading...</p>
+}
+else
+{
+    <ul>
+        @foreach(Flashcard card in flashcards)
+        {
+            <li>@card.Question</li>
+            <li>@card.Answer</li>
+        }
+    </ul>
+}
+
+@code
+{
+    List<Flashcard> flashcards = new List<Flashcard>();
+
+    protected override async Task OnInitializedAsync() 
+    {
+        flashcards = await flashcardService.GetFlashCardsAsync(1);
+    }
+}
