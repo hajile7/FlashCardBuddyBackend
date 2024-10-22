@@ -23,8 +23,7 @@ namespace FlashCardBuddy_API.Controllers
                 Username = u.Username,
                 Firstname = u.Firstname,
                 Lastname = u.Lastname,
-                Email = u.Email,
-                Flashcards = u.Flashcards,
+                Email = u.Email
             };
         }
 

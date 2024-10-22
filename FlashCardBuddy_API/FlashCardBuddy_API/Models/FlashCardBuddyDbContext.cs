@@ -43,9 +43,6 @@ public partial class FlashCardBuddyDbContext : DbContext
                 .HasColumnName("STACK");
             entity.Property(e => e.Userid).HasColumnName("USERID");
 
-            entity.HasOne(d => d.User).WithMany(p => p.Flashcards)
-                .HasForeignKey(d => d.Userid)
-                .HasConstraintName("FK__FLASHCARD__USERI__412EB0B6");
         });
 
         modelBuilder.Entity<User>(entity =>
