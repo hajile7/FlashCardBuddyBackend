@@ -51,17 +51,17 @@ namespace FlashCardBuddy_API.Controllers
 
         }
 
-        [HttpGet("Login")]
-        public async Task<IActionResult> Login(string username, string password)
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login(LoginModel loginmodel)
         {
-            User result = await dbContext.Users.Where(u => u.Active == true).FirstOrDefaultAsync(u => u.Username == username);
+            User result = await dbContext.Users.Where(u => u.Active == true).FirstOrDefaultAsync(u => u.Username == loginmodel.username);
 
             if(result == null || result.Active == false)
             {
                 return NotFound();
             }
 
-            bool isPasswordValid = passwordService.verifyPassword(password, result.Password);
+            bool isPasswordValid = passwordService.verifyPassword(loginmodel.password, result.Password);
 
             if (!isPasswordValid)
             {
